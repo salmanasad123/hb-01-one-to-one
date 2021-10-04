@@ -19,8 +19,15 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
+    // add a new field to reference instructor, we want to make it bi-directional
+    // (mapped by = instructorDetail) basically refers to instructor detail property in the instructor class
+    // we are telling hibernate that this instructor field is mapped by the Instructor Detail property
+    // in the instructor class
+    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    private Instructor instructor;
+
     // no arg constructor
-    public InstructorDetail(){
+    public InstructorDetail() {
 
     }
 
@@ -53,6 +60,14 @@ public class InstructorDetail {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     // generate toString() method
