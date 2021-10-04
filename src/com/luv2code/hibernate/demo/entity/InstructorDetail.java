@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 // annotate the class as entity to map to the database table
 @Entity
+@Table(name = "instructor_detail")  // name of table in database
 public class InstructorDetail {
 
     // define the fields and annotate the fields with database column names
