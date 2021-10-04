@@ -25,7 +25,7 @@ public class Instructor {
     // delete, fetch, persisting (is instructor is saved, instructor detail will also be saved)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id") // this is the column to join on
-    private InstructorDetail instructorDetailId;
+    private InstructorDetail instructorDetail;
 
     public Instructor() {
     }
@@ -70,11 +70,11 @@ public class Instructor {
     }
 
     public InstructorDetail getInstructorDetailId() {
-        return instructorDetailId;
+        return instructorDetail;
     }
 
-    public void setInstructorDetailId(InstructorDetail instructorDetailId) {
-        this.instructorDetailId = instructorDetailId;
+    public void setInstructorDetail(InstructorDetail instructorDetail) {
+        this.instructorDetail= instructorDetail;
     }
 
     @Override
@@ -84,7 +84,7 @@ public class Instructor {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", instructorDetailId=" + instructorDetailId +
+                ", instructorDetailId=" + instructorDetail +
                 '}';
     }
 }

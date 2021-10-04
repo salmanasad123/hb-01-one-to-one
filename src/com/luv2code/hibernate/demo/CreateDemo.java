@@ -30,7 +30,7 @@ public class CreateDemo {
                     new InstructorDetail("www.youtube.com/luv2code", "Coding");
 
             // associate the objects, we need to hook our objects together
-            instructor.setInstructorDetailId(instructorDetail);
+            instructor.setInstructorDetail(instructorDetail);
 
             // start a transaction
             session.beginTransaction();
